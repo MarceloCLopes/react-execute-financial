@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-size: 1.2rem;
+    line-height: 1.2;
+  }
+  ul {
+    list-style-type: none;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+@layer components {
+  .button {
+    @apply py-[17px] px-7 text-xl text-white font-semibold uppercase duration-300 bg-secondary-color border border-solid border-secondary-color rounded cursor-pointer hover:bg-secondary-dark hover:border hover:border-solid hover:border-secondary-dark;
+  }
+
+  .line {
+    @apply block w-10 h-[3px] my-[5px] mx-auto bg-primary-color;
+  }
+
+  .header-bg {
+    @apply bg-[rgba(0,0,0,0.9)];
+  }
+}
+
+/*----------- Navbar -----------*/
+@media screen and (max-width: 940px) {
+  .header {
+    @apply max-w-full bg-[rgba(0,0,0,0.9)];
+  }
+
+  .navbar {
+    @apply max-w-full;
+  }
+
+  .hamburger {
+    @apply block;
+  }
+
+  .nav-menu {
+    @apply fixed -left-full top-[90px] flex-col bg-[rgba(0,0,0,0.9)] w-full h-[90vh] z-[999] text-center duration-300;
+  }
+
+  .nav-menu.active {
+    @apply left-0;
+  }
+
+  .nav-item {
+    @apply my-6 px-0;
+  }
+
+  .header .navbar img {
+    @apply w-[160px];
+  }
+}
+
+/*----------- Hero -----------*/
+@layer components {
+  .hero::before {
+    background: url("./assets/hero.jpg") no-repeat center center/cover;
+  }
+}
+
+@media screen and (max-width: 940px) {
+  .hero .content p:nth-child(3) {
+    @apply text-[2.6rem];
+  }
+
+  .hero .content p:nth-child(4) {
+    @apply text-[1.6rem];
+  }
+}
+
+/*----------- About -----------*/
+@media screen and (max-width: 940px) {
+  .about .container {
+    @apply grid-cols-1;
+  }
+
+  .about .container {
+    @apply w-full;
+  }
+
+  .about .container img {
+    @apply p-0 w-[90vh];
+  }
+
+  .about .container .col-2 {
+    @apply p-0;
+  }
+
+  .about .button {
+    @apply mb-4;
+  }
+}
+
+/*---------- Testimonials -----------*/
+@media screen and (max-width: 940px) {
+  .testimonials .container {
+    @apply w-full;
+  }
+
+  .testimonials .container .content {
+    @apply grid-cols-1;
+  }
+
+  .testimonials .card {
+    @apply max-w-full m-4;
+  }
+}
+
+/*---------- Testimonials -----------*/
+@media screen and (max-width: 940px) {
+  .demo .container {
+    @apply max-w-full grid-cols-1 gap-[30px];
+  }
+
+  .demo .iframe {
+    @apply w-full h-auto;
+  }
+}
